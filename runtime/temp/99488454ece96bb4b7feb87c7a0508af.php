@@ -1,0 +1,82 @@
+<?php /*a:1:{s:74:"/www/wwwroot/mmo.jrytc.cn/application/manage/view/users/control_audit.html";i:1652684700;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>风控审核</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="/resource/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/resource/css/mylay.css">
+</head>
+<body>
+    <div style="padding: 20px; background-color: #F2F2F2;">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <form class="layui-form" action="">
+                            <input type="hidden" name="id" value="<?php echo htmlentities($data['id']); ?>">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提款用户</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="username" value="<?php echo htmlentities($data['username']); ?>" value="" autocomplete="off" placeholder="" class="layui-input" readonly>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"></div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">提款金额</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="price" value="<?php echo htmlentities($data['amount']); ?>" value="" autocomplete="off" placeholder="" class="layui-input" readonly>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"></div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">服务费</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="fee" value="<?php echo htmlentities($data['fee']); ?>" value="" autocomplete="off" placeholder="" class="layui-input" readonly>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"></div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">出款金额</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" name="amount" value="<?php echo htmlentities($data['price']); ?>" value="" autocomplete="off" placeholder="" class="layui-input" readonly>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"></div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">处理结果</label>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="state" value="1" title="审核通过"<?php if($data['state'] == 1): ?> checked<?php endif; ?>>
+                                    <input type="radio" name="state" value="2" title="审核未通过"<?php if($data['state'] == 1): ?> checked<?php endif; ?>>
+                                    <input type="radio" name="state" value="3" title="待审核"<?php if($data['state'] == 1): ?> checked<?php endif; ?>>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"></div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">处理说明</label>
+                                <div class="layui-input-block">
+                                    <textarea name="remarks" placeholder="处理说明" class="layui-textarea"><?php echo isset($data['remarks']) ? htmlentities($data['remarks']) : ''; ?></textarea>
+                                </div>
+                                <div class="layui-form-mid layui-word-aux"></div>
+                            </div>
+                            <div class="layui-form-item" style="margin-top: 40px;text-align: center;">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit lay-filter="controlaudit">立即提交</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="/resource/layuiadmin/layui/layui.js"></script>
+<script src="/resource/js/manage/init_date.js"></script>
+<script src="/resource/js/manage/bank.js"></script>
+</body>
+</html>
